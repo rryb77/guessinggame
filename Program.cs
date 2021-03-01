@@ -8,17 +8,21 @@ namespace guessinggame
         {
             int secretNumber = 42;
             int totalGuesses = 4;
+            bool winner = false;
 
+            Console.WriteLine("Can you guess the secret number? ");
 
-            while (totalGuesses > 0)
+            while (totalGuesses > 0 && winner == false)
             {
-                Console.Write("Can you guess the secret number? ");
+
+                Console.Write($"Your Guess ({totalGuesses}): ");
                 string input = Console.ReadLine();
                 int parsedInput = Int32.Parse(input);
 
                 if (parsedInput == secretNumber)
                 {
                     Console.WriteLine($"Correct! It was {secretNumber}!");
+                    winner = true;
                 }
                 else
                 {
@@ -26,6 +30,7 @@ namespace guessinggame
                 }
 
                 totalGuesses--;
+                Console.WriteLine("");
             }
 
         }
