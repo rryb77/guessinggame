@@ -26,7 +26,15 @@ namespace guessinggame
                 }
                 else
                 {
-                    Console.WriteLine($"Wrong! Try again! {secretNumber}");
+                    if (parsedInput > secretNumber)
+                    {
+                        Console.WriteLine($"Wrong! It's lower... {secretNumber}");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Wrong! It's higher... {secretNumber}");
+                    }
+
                 }
 
                 totalGuesses--;
