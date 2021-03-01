@@ -6,7 +6,7 @@ namespace guessinggame
     {
         static void Main(string[] args)
         {
-            int secretNumber = 42;
+            int secretNumber = new Random().Next(1, 100);
             int totalGuesses = 4;
             bool winner = false;
 
@@ -26,7 +26,7 @@ namespace guessinggame
                 }
                 else
                 {
-                    Console.WriteLine($"Wrong! Try again!");
+                    Console.WriteLine($"Wrong! Try again! {secretNumber}");
                 }
 
                 totalGuesses--;
