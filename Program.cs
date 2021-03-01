@@ -7,8 +7,32 @@ namespace guessinggame
         static void Main(string[] args)
         {
             int secretNumber = new Random().Next(1, 100);
-            int totalGuesses = 4;
+            int totalGuesses = 0;
             bool winner = false;
+
+            Console.WriteLine("----------------------------------");
+            Console.WriteLine("| Choose Your Difficulty         |");
+            Console.WriteLine("----------------------------------");
+            Console.WriteLine("| 1. Easy                        |");
+            Console.WriteLine("| 2. Medium                      |");
+            Console.WriteLine("| 3. Hard                        |");
+            Console.WriteLine("----------------------------------");
+
+            string difficulty = Console.ReadLine();
+            int parsedDifficulty = Int32.Parse(difficulty);
+
+            if (parsedDifficulty == 1)
+            {
+                totalGuesses = 8;
+            }
+            else if (parsedDifficulty == 2)
+            {
+                totalGuesses = 6;
+            }
+            else if (parsedDifficulty == 3)
+            {
+                totalGuesses = 4;
+            }
 
             Console.WriteLine("Can you guess the secret number? ");
 
@@ -28,11 +52,11 @@ namespace guessinggame
                 {
                     if (parsedInput > secretNumber)
                     {
-                        Console.WriteLine($"Wrong! It's lower... {secretNumber}");
+                        Console.WriteLine($"Wrong! Try lower... {secretNumber}");
                     }
                     else
                     {
-                        Console.WriteLine($"Wrong! It's higher... {secretNumber}");
+                        Console.WriteLine($"Wrong! Try higher... {secretNumber}");
                     }
 
                 }
