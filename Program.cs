@@ -7,19 +7,27 @@ namespace guessinggame
         static void Main(string[] args)
         {
             int secretNumber = 42;
+            int totalGuesses = 4;
 
-            Console.Write("Can you guess the secret number? ");
-            string input = Console.ReadLine();
-            int parsedInput = Int32.Parse(input);
 
-            if (parsedInput == secretNumber)
+            while (totalGuesses > 0)
             {
-                Console.WriteLine($"Correct! It was {secretNumber}!");
+                Console.Write("Can you guess the secret number? ");
+                string input = Console.ReadLine();
+                int parsedInput = Int32.Parse(input);
+
+                if (parsedInput == secretNumber)
+                {
+                    Console.WriteLine($"Correct! It was {secretNumber}!");
+                }
+                else
+                {
+                    Console.WriteLine($"Wrong! Try again!");
+                }
+
+                totalGuesses--;
             }
-            else
-            {
-                Console.WriteLine($"Wrong! It was {secretNumber}!");
-            }
+
         }
     }
 }
